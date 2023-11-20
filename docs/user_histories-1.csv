@@ -1,0 +1,7 @@
+id, "as {user}", "I want {action}","so that I obtain {benefit}"
+1,instance_owner,"to schedule my server instance in dev or qa environments to turn off at the end of the work day","to ensure cost savings and resource optimization."
+4,sys_admin,"to define the list of server instances that should be turned off", "based on their names,to automate the process and avoid human error."
+5,sys_admin,"to specify the turn-off time for the selected server instances","to ensure that they are not consuming unnecessary resources during non-working hours."
+6,sys_admin,"the system to automatically turn off the specified server instances at the scheduled time","to reduce operational costs and improve resource utilization."
+9,sys_admin,"to perform audits on the system to verify that only development and QA server instances have been turned off","and that production instances or critical systems remain operational."
+id,sys_admin,"the system to enforce proper access controls and permissions to prevent unauthorized changes to the turn-off schedule or instance list","to maintain security and compliance."
