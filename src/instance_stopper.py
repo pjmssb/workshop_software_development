@@ -17,14 +17,14 @@ class InstanceStopper:
 
     def __init__(self) -> None:    
         pass #Here we may inject the instance_manager
-
-    def stop_instance(self, instance_name) -> (int, str):
+        
+    def stop_instance(self, instance_name:str) -> (int, str):
         print(instance_name)
         return self.SERVER_SHUTDOWN_SUCCESS, f"The server '{instance_name}' whas shutdown correctly"
     
 
 # Main program logic for the use case
-def main(instances, environment):
+def main(instances:List[str], environment:str):
     print(environment)
 
     instance_stopper = InstanceStopper()
@@ -33,9 +33,7 @@ def main(instances, environment):
         try:
             # Attempt to stop the instance
             server_shutdown_result_code, server_shutdown_result_text = instance_stopper.stop_instance(instance)
-            
-
-                
+                            
             # Logging the result
             timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             #logger.log(environment, timestamp, instance, result)
