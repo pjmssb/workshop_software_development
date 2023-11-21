@@ -25,7 +25,7 @@ class CloudWatchLoggerAdapter(LoggerPort):
             print(f"Error retrieving sequence token: {error}")
             return None
 
-    def log_event(self, tipo_de_evento: str, timestamp: datetime, info: str):
+    def log(self, tipo_de_evento: str, timestamp: datetime, info: str):
         if self.sequence_token is None:
             self.sequence_token = self._get_sequence_token()
 
