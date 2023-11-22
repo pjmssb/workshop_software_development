@@ -1,6 +1,6 @@
 #Command line adapter for instance_manager 
 from instance_manager_port import InstanceManagerPort
-
+import re
 class CLIInstanceManager(InstanceManagerPort):
     
     def _is_arn_well_formed(self, arn: str) -> bool:

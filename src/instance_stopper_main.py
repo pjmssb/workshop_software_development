@@ -33,7 +33,8 @@ def main(instances:List[str], environment:str):
             logger.log('instance_management', timestamp, result)
 
         except Exception as e:
-            print(f"Error: {str(e)}")
+            print(f"Error: {str(e)}")            
+            timestamp = datetime.datetime.now() #.strftime("%Y-%m-%d %H:%M:%S")
             result = f"Resultado {environment}, {instance} - [555] - Exception {str(e)}, "
             logger.log('instance_management', timestamp, result)
 
