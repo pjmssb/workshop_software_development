@@ -22,23 +22,24 @@ def main(instances:List[str], environment:str):
 
     for instance in instances:
         try:
-            # Attempt to stop the instance
+            #Select the proper 
             if environment == 'CLOUD':
                 instance_manager = AWSEC2InstanceManager(instance)
             else:
                 instance_manager = CLIInstanceManager(instance)
-            
+
+            # Attempt to stop the instance
             server_shutdown_result_code, server_shutdown_result_text = instance_manager.stop_instance()
                             
             # Logging the result
             timestamp = datetime.datetime.now() #.strftime("%Y-%m-%d %H:%M:%S")
-            result = f"Resultado [{environment}, {instance} - {server_shutdown_result_code}] - {server_shutdown_result_text}, "
+            result = f"Resultado {environment}, {instance} - [{server_shutdown_result_code}] - {server_shutdown_result_text}, "
             logger.log('instance_management', timestamp, result)
 
         except Exception as e:
-            # Handle any exceptions that occur
             print(f"Error: {str(e)}")
-            #logger.log(environment, datetime.datetime.now(), instance, f"Error: {str(e)}")
+            result = f"Resultado {environment}, {instance} - [555] - Exception {str(e)}, "
+            logger.log('instance_management', timestamp, result)
 
 # Command Line entry point for the program
 if __name__ == "__main__":
