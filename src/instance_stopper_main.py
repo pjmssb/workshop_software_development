@@ -44,7 +44,13 @@ def main(instances:List[str], environment:str):
 # Command Line entry point for the program
 if __name__ == "__main__":
     # Example usage, ideally you would parse these from CLI args or Lambda event
-    instances = ['instance1', 'instance2', 'instance8000']
+    instances = [
+        'arn:aws:ec2:sa-east-1:529025452537:instance/i-0c115728111814dba',
+        'arn:aws:ec2:sa-east-1:529025452537:instance/i-0c115728111814dbxa',
+        'arn:aws:ec2:eu-west-3:529025452537:instance/i-0c115728111814dbb',
+        'arn:aws:ec2:eu-west-3:529025452537:instance/i-0c115728111814dby',
+        'arn:aws:ec2:ap-southeast-2:529025452537:instance/i-0c115728111814dbc'
+    ]
     environment = 'LOCAL'  # or 'CLOUD'
 
     main(instances, environment)
