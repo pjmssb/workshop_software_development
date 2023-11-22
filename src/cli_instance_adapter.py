@@ -3,12 +3,10 @@ from instance_manager_port import InstanceManagerPort
 
 class CLIInstanceManager(InstanceManagerPort):
     
-    def __init__(self, instance_name:str) -> None:
-        self.instance_name = instance_name
               
-    def stop_instance(self) -> (int,str):
+    def stop_instance(self, instance_name:str) -> (int,str):
 
-        last_char = self.instance_name.upper()[len(self.instance_name)-1]
+        last_char = instance_name.upper()[len(instance_name)-1]
         #if instance name ends in 'X' responds the instance was not found
         if last_char == 'X':
             return self.SERVER_NOT_FOUND_CODE, self.SERVER_NOT_FOUND_TEXT

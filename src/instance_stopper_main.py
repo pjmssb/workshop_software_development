@@ -14,22 +14,18 @@ LOG_STREAM = 'instance_stopper'
 def main(instances:List[str], environment:str):
     
     
-    #Select the proper logger adapter
+    #Select the proper adapters
     if environment == 'CLOUD':        
         logger = CloudWatchLoggerAdapter(LOG_GROUP, LOG_STREAM)
+        instance_manager = AWSEC2InstanceManager()
     else:        
         logger = FileLoggerAdapter(LOCAL_LOG_FILE)
+        instance_manager = CLIInstanceManager()
 
     for instance in instances:
         try:
-            #Select the proper 
-            if environment == 'CLOUD':
-                instance_manager = AWSEC2InstanceManager(instance)
-            else:
-                instance_manager = CLIInstanceManager(instance)
-
             # Attempt to stop the instance
-            server_shutdown_result_code, server_shutdown_result_text = instance_manager.stop_instance()
+            server_shutdown_result_code, server_shutdown_result_text = instance_manager.stop_instance(instance)
                             
             # Logging the result
             timestamp = datetime.datetime.now() #.strftime("%Y-%m-%d %H:%M:%S")

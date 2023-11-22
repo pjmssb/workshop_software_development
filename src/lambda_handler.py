@@ -1,4 +1,4 @@
-import main
+import instance_stopper_main
 
 def lambda_handler(event, context):
     # Hard-coded list of instances
@@ -11,9 +11,9 @@ def lambda_handler(event, context):
     ]
     environment = 'CLOUD'
 
-    main.main(instances, environment)
+    instance_stopper_main.main(instances, environment)
 
     return {
         'statusCode': 200,
-        'body': 'Instances processed successfully'
+        'body': 'Process initiated... check logs to see the progress'
     }
