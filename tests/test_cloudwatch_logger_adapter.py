@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import patch, MagicMock
 from datetime import datetime
 import sys
-sys.path.append('../src')  # Adjust as necessary
+sys.path.append('../src')  
 from cloudwatch_logger_adapter import CloudWatchLoggerAdapter
 from moto import mock_logs
 
