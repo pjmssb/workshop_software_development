@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import patch, MagicMock
 from datetime import datetime
 import sys
-sys.path.append('../src')  
+sys.path.append('./src')  
 from instance_stopper_main import main
 
 class TestInstanceStopperMain(unittest.TestCase):

@@ -3,7 +3,7 @@ from unittest.mock import patch
 import os
 import sys
 from datetime import datetime
-sys.path.append('../src')  
+sys.path.append('./src')  
 from file_logger_adapter import FileLoggerAdapter
 
 class TestFileLoggerAdapter(unittest.TestCase):

@@ -1,6 +1,6 @@
 import unittest
 import sys
-sys.path.append('../src')  
+sys.path.append('./src')  
 from cli_instance_adapter import CLIInstanceManager
 
 class TestCLIInstanceManager(unittest.TestCase):

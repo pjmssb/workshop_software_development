@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import patch
 from moto import mock_ec2
 import sys
-sys.path.append('../src')  
+sys.path.append('./src')  
 from aws_ec2_instance_adapter import AWSEC2InstanceManager
 
 class TestAWSEC2InstanceManager(unittest.TestCase):
