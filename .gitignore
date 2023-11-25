@@ -1,2 +1,4 @@
-prompts/*
+./prompts/*
 *.log
+./deployment/*
+
