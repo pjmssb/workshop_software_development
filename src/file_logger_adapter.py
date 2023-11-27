@@ -1,6 +1,6 @@
-import os
 from datetime import datetime
 from logger_port import LoggerPort
+
 
 class FileLoggerAdapter(LoggerPort):
 
