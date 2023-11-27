@@ -8,13 +8,11 @@ import sys
 src_dir = './src'
 deployment_dir = './deployment'
 deployment_zip = './deployment/lambda_deployment_package.zip'
-requirements_file = './src/requirements.txt'  # Update if your requirements file is located elsewhere
+requirements_file = './src/requirements.txt'  
 
-# Create deployment directory if it doesn't exist
 if not os.path.exists(deployment_dir):
     os.makedirs(deployment_dir)
 
-# Install dependencies from requirements.txt into the deployment directory
 if os.path.exists(requirements_file):
     subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-r', requirements_file, '-t', deployment_dir])
 
