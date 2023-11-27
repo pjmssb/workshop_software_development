@@ -54,6 +54,6 @@ class CloudWatchLoggerAdapter(LoggerPort):
 
             # Reset the sequence token if it's invalid
             if error.response['Error']['Code'] in \
-                    ('InvalidSequenceTokenException', 
+                    ('InvalidSequenceTokenException',
                      'DataAlreadyAcceptedException'):
                 self.sequence_token = self._get_sequence_token()

@@ -1,7 +1,7 @@
 import datetime
-from typing import List 
-from cli_instance_adapter import CLIInstanceManager 
-from aws_ec2_instance_adapter import AWSEC2InstanceManager 
+from typing import List
+from cli_instance_adapter import CLIInstanceManager
+from aws_ec2_instance_adapter import AWSEC2InstanceManager
 from file_logger_adapter import FileLoggerAdapter
 from cloudwatch_logger_adapter import CloudWatchLoggerAdapter
 

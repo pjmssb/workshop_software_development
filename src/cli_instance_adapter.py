@@ -4,16 +4,16 @@ import re
 
 
 class CLIInstanceManager(InstanceManagerPort):
-    
+
     def _is_arn_well_formed(self, arn: str) -> bool:
-        
+
         '''
-        Simple ARN format validation (can be extended for 
+        Simple ARN format validation (can be extended for
         more specific ARN formats)
         '''
         pattern = r'arn:aws:ec2:[a-z0-9-]+:\d+:instance/[a-z0-9-]+'
         return re.match(pattern, arn) is not None
-           
+
     def stop_instance(self, instance_name: str) -> (int, str):
 
         if not self._is_arn_well_formed(instance_name):
