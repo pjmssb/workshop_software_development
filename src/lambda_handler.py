@@ -1,5 +1,6 @@
 import instance_stopper_main
 
+
 def lambda_handler():
     # Hard-coded list of instances
     instances = [

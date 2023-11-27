@@ -3,8 +3,9 @@ from datetime import datetime
 from logger_port import LoggerPort
 from botocore.exceptions import ClientError
 
+
 class CloudWatchLoggerAdapter(LoggerPort):
-    def __init__(self, log_group:str, stream_name:str) -> None:
+    def __init__(self, log_group: str, stream_name: str) -> None:
         self.client = boto3.client('logs')
         self.log_group = log_group
         self.stream_name = stream_name
@@ -52,5 +53,7 @@ class CloudWatchLoggerAdapter(LoggerPort):
             print(f"Error putting log event: {error}")
 
             # Reset the sequence token if it's invalid
-            if error.response['Error']['Code'] in ('InvalidSequenceTokenException', 'DataAlreadyAcceptedException'):
+            if error.response['Error']['Code'] in \
+                    ('InvalidSequenceTokenException', 
+                     'DataAlreadyAcceptedException'):
                 self.sequence_token = self._get_sequence_token()
